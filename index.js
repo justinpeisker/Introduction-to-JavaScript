@@ -160,10 +160,42 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random()
+if (computer < 0.34){
+  computer = "Rock";
+}else if ((computer <= 0.67) && (computer >= 0.34)){
+  computer = "Paper";
+}else{
+  computer = "Scissors";
+}
+
+// let user = Math.random()
+// if (user < 0.34){
+//   user = "Rock";
+// }else if (user <= 0.67 && user >= 0.34){
+//   user = "Paper";
+// }else{
+//   user = "Scissors";
+// }
 
 function game(user, computer){
-  /*add your code here*/
+  if(user === computer){
+    return "it's a tie";
+  }else if((user === "Rock") && (computer === "Paper")){
+    return "you lose!";
+  }else if((user === "Rock") && (computer === "Scissors")){
+    return "you win!";
+  }else if((user === "Paper") && (computer === "Scissors")){
+    return "you lose!";
+  }else if((user === "Paper") && (computer === "Rock")){
+    return "you win!"
+  }else if((user === "Scissors") && (computer === "Rock")){
+    return "you lose!";
+  }else if((user === "Scissors") && (computer === "Paper")){
+    return "you win!"
+  }
 }
+
 
 
 
@@ -208,9 +240,9 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      for (i = 99; i > 0; i--){
-        return "(i) bottles of soda on the wall, (i) bottles of soda, take one down pass it around (i--) bottles of soda on the wall"
+function annoyingSong(i){
+      for (i=5; i >= 1; i--){
+        return i + " bottles of soda on the wall, " + i + " bottles of soda, take one down pass it around " + (i-1) + " bottles of soda on the wall";
       }
 }
 
